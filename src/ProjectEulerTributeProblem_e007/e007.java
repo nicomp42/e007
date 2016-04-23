@@ -15,11 +15,22 @@ public class e007 {
 		//System.out.println("Totient of 10 = " + getTotient(10));
 		
 		int maxTotientSum = 0;
+
 		
+		for (int i = 1000; i < 100000; i++) {
+			//if (isPrime(i)) {
+			if (i % 1000 == 0) {System.out.println("i = " + i);}
+				int totientI = getTotient(i);
+				if (isPrime(totientI)) {
+					System.out.println("Bingo: i = " + i + " totientI = " + totientI);					
+				}
+			//}
+		}
+		/*
 		for (int i = 1000; i < 100000; i++) {
 			for (int j = 1000; j < 100000; j++) {
 				if (i != j ) {
-					if (isPrime(i) && isPrime(j) && isCoprime(i, j)) {
+					if (isPrime(i) && isPrime(j)) {			// && isCoprime(i, j)) {
 						//System.out.println("Step 1: i = " + i + " j = " + j);
 						int totientI = getTotient(i);
 						int totientJ = getTotient(j);
@@ -41,6 +52,7 @@ public class e007 {
 		}
 		
 		System.out.println("maxTotientSum = " + maxTotientSum);
+		*/
 	}
 
 	/**
