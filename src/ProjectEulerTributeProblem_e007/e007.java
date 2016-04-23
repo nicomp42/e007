@@ -14,26 +14,32 @@ public class e007 {
 		// Test totient calculation
 		//System.out.println("Totient of 10 = " + getTotient(10));
 		
-		
-		
-		
 		int maxTotientSum = 0;
-		for (int i = 2; i < 100000; i++) {
-			for (int j = 0; j < 100000; j++) {
+		
+		for (int i = 1000; i < 100000; i++) {
+			for (int j = 1000; j < 100000; j++) {
 				if (i != j ) {
 					if (isPrime(i) && isPrime(j) && isCoprime(i, j)) {
+						//System.out.println("Step 1: i = " + i + " j = " + j);
 						int totientI = getTotient(i);
 						int totientJ = getTotient(j);
-						if ((totientI + totientJ) > maxTotientSum) {
-							maxTotientSum = totientI + totientJ;
-							System.out.println("new max totient = " + maxTotientSum);
+						if (isPrime(totientI) && isPrime(totientJ)) {
+							System.out.println("Step 2: i = " + i + " j = " + j);
+							if (isPrime(totientI + totientJ)) {
+								System.out.println("Step 3: i = " + i + " j = " + j);
+							}
 						}
-						
+						//if ((totientI + totientJ) > maxTotientSum) {
+						//	maxTotientSum = totientI + totientJ;
+						//	System.out.println("new max totient = " + maxTotientSum);
+						//}
+
 						//System.out.println("i = " + i + " j = " + j);
 					}
 				}
 			}
 		}
+		
 		System.out.println("maxTotientSum = " + maxTotientSum);
 	}
 
@@ -70,7 +76,7 @@ public class e007 {
 	public static int getTotient(int a) {
 		int totient = 0;
 		//System.out.println("Checking coprimes for " + a);
-		for (int i = 2; i < a; i++) {
+		for (int i = 1; i < a; i++) {
 			if (isCoprime(i,a)) {
 				//System.out.println("Coprime = " + i);
 				totient++;
