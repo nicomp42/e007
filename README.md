@@ -5,3 +5,6 @@ Project Euler Tribute e007
 
 * Compute the sum of the totients of the first 10000 prime numbers
 * The solution is in the code. Don't look at it until you've written it. 
+
+* Totient algo is here: https://cp-algorithms.com/algebra/phi-function.html#toc-tgt-1
+
